@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.FlowPane?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.paint.Color?>
+<?import javafx.scene.text.Font?>
+
+<VBox prefHeight="350.0" prefWidth="630.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.UpdateAppointmentController">
+   <children>
+      <SplitPane dividerPositions="0.16703786191536749" focusTraversable="true" prefHeight="-1.0" prefWidth="-1.0" VBox.vgrow="ALWAYS">
+         <items>
+            <AnchorPane prefHeight="598.0" prefWidth="101.0">
+               <children>
+                  <VBox alignment="TOP_CENTER" layoutX="2.0" layoutY="14.0" prefHeight="305.0" prefWidth="143.0" spacing="20.0">
+                     <children>
+                        <Label alignment="CENTER" minWidth="60.0" prefWidth="-1.0" style="&#10;" text="Navigation" textAlignment="CENTER" wrapText="false">
+                           <font>
+                              <Font size="18.0" fx:id="x1" />
+                           </font>
+                           <textFill>
+                              <Color blue="0.624" green="0.624" red="0.624" fx:id="x2" />
+                           </textFill>
+                        </Label>
+                        <Button fx:id="recordsButton" mnemonicParsing="false" onAction="#onActionDisplayRecords" prefHeight="25.0" prefWidth="93.0" text="Records" />
+                        <Button fx:id="appointmentsButton" mnemonicParsing="false" onAction="#onActionDisplayAppointments" prefHeight="25.0" prefWidth="93.0" text="Appointments" />
+                        <Button fx:id="calendarButton" mnemonicParsing="false" onAction="#onActionDisplayCalendar" prefHeight="25.0" prefWidth="93.0" text="Calendar" />
+                     </children>
+                  </VBox>
+               </children>
+            </AnchorPane>
+            <ScrollPane prefHeight="-1.0" prefWidth="-1.0">
+               <content>
+                  <AnchorPane id="Content" minHeight="-1.0" minWidth="-1.0" prefHeight="346.0" prefWidth="476.0">
+                     <children>
+                        <GridPane layoutX="14.0" layoutY="41.0" prefHeight="250.0" prefWidth="300.0">
+                          <columnConstraints>
+                            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                          </columnConstraints>
+                          <rowConstraints>
+                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                          </rowConstraints>
+                           <children>
+                              <Label fx:id="Name" text="Name" />
+                              <Label text="Type" GridPane.rowIndex="1" />
+                              <Label text="Date" GridPane.rowIndex="2" />
+                              <Label text="Start" GridPane.rowIndex="3" />
+                              <Label text="End" GridPane.rowIndex="4" />
+                              <Pane prefHeight="200.0" prefWidth="200.0" GridPane.halignment="RIGHT" GridPane.rowIndex="7" />
+                              <Pane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.halignment="RIGHT" GridPane.rowIndex="7">
+                                 <children>
+                                    <Button fx:id="Submit" defaultButton="true" layoutX="98.0" layoutY="2.0" mnemonicParsing="false" onAction="#onActionSubmit" text="Submit" />
+                                 </children>
+                              </Pane>
+                              <DatePicker fx:id="appointmentDateField" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                              <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="3">
+                                 <children>
+                                    <ComboBox fx:id="appointmentStartHour" prefHeight="25.0" prefWidth="67.0" />
+                                    <FlowPane prefHeight="31.0" prefWidth="6.0" />
+                                    <ComboBox fx:id="appointmentStartMin" prefHeight="25.0" prefWidth="68.0" />
+                                 </children>
+                              </HBox>
+                              <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="4">
+                                 <children>
+                                    <ComboBox fx:id="appointmentEndHour" prefHeight="25.0" prefWidth="67.0" />
+                                    <FlowPane prefHeight="31.0" prefWidth="6.0" />
+                                    <ComboBox fx:id="appointmentEndMin" prefHeight="25.0" prefWidth="68.0" />
+                                 </children>
+                              </HBox>
+                              <ComboBox fx:id="appointmentTypeField" prefHeight="25.0" prefWidth="217.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                              <TextField fx:id="customerNameField" editable="false" GridPane.columnIndex="1" />
+                           </children>
+                        </GridPane>
+                        <Label layoutX="14.0" layoutY="14.0" minWidth="60.0" prefWidth="-1.0" style="&#10;" text="Appointment" textAlignment="CENTER" wrapText="false">
+                           <font>
+                              <Font size="18.0" fx:id="x11" />
+                           </font>
+                           <textFill>
+                              <Color blue="0.624" green="0.624" red="0.624" fx:id="x21" />
+                           </textFill>
+                        </Label>
+                        <GridPane layoutX="14.0" layoutY="302.0" prefHeight="30.0" prefWidth="453.0">
+                          <columnConstraints>
+                            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                          </columnConstraints>
+                          <rowConstraints>
+                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                          </rowConstraints>
+                           <children>
+                              <Pane prefHeight="200.0" prefWidth="200.0" GridPane.halignment="LEFT" />
+                              <Pane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.halignment="RIGHT" />
+                           </children>
+                        </GridPane>
+                     </children></AnchorPane>
+               </content>
+            </ScrollPane>
+         </items>
+      </SplitPane>
+   </children>
+</VBox>
