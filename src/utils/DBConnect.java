@@ -16,9 +16,9 @@ import java.sql.SQLException;
 public class DBConnect {
  
     // JDBC URL parts
-    private static final String protocol = "jdbc";
-    private static final String vendorName = ":mysql:";
-    private static final String server = "//wgudb.ucertify.com:3306/U059BO";
+    private static final String protocol = "";
+    private static final String vendorName = "";
+    private static final String server = "";
     
     // JDBC URL
     private static final String jdbcURL = protocol + vendorName + server;
